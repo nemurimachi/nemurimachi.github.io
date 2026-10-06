@@ -3,36 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ショート動画投稿ツール</title>
+<title>ショート動画投稿ツール（Nemurimachi-shorts）</title>
 <style>
   :root { color-scheme: light dark; }
   body {
-    max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 6rem;
+    max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 6rem;
     font-family: system-ui, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
     line-height: 1.9; color: #1a1a1a; background: #fff;
   }
   @media (prefers-color-scheme: dark) {
     body { color: #e8e8e8; background: #16181c; }
     a { color: #7cb3ff; }
+    .box { background: #1e2127 !important; border-color: #3a3f47 !important; }
+    .links { background: #1a2433 !important; border-color: #2d4668 !important; }
   }
-  h1 { font-size: 1.6rem; line-height: 1.4; margin: 0 0 .5rem; }
+  h1 { font-size: 1.7rem; line-height: 1.4; margin: 0 0 .4rem; }
   h2 { font-size: 1.1rem; margin: 2.5rem 0 .75rem; }
-  .lead { opacity: .7; margin: 0 0 2.5rem; }
+  .lead { opacity: .75; margin: 0 0 1.75rem; }
   ul { padding-left: 1.3rem; }
   li { margin: .35rem 0; }
+  code { font-size: .9em; word-break: break-all; }
+  .box { background: #f6f8fa; border: 1px solid #d8dee4; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+  .links { border: 2px solid #c9d6e8; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; background: #f4f8ff; }
+  .links strong { display: block; margin-bottom: .4rem; }
+  .links a { display: inline-block; margin-right: 1.25rem; font-weight: 600; }
   footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid rgba(128,128,128,.3); opacity: .7; font-size: .9rem; }
 </style>
 </head>
 <body>
 
-<h1>ショート動画投稿ツール</h1>
-<p class="lead">Nemurimachi が自身の公式アカウントへの投稿作業を自動化するために使用している、個人用のソフトウェアです。</p>
+<h1>ショート動画投稿ツール（Nemurimachi-shorts）</h1>
+<p class="lead">
+Nemurimachi が自身の公式アカウントへの投稿作業を自動化するために使用している、個人用のソフトウェアです。
+一般に配布・提供しているサービスではありません。
+</p>
+
+<div class="links">
+  <strong>ポリシー</strong>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <a href="terms.html">利用規約</a>
+</div>
+
+<div class="box">
+  <p style="margin:0">
+    本ツールは <strong>YouTube API Services</strong> を利用しています。
+    利用にあたっては
+    <a href="https://www.youtube.com/t/terms">YouTube 利用規約</a>
+    が適用され、Google による情報の取り扱いについては
+    <a href="https://policies.google.com/privacy">Google プライバシー ポリシー</a>
+    をご確認ください。
+  </p>
+</div>
 
 <h2>目的</h2>
 <p>
 毎週決まった曜日にショート動画を投稿するにあたり、手作業で行っていた
 アップロードと公開日時の設定を自動化するために作られました。
-一般に配布・提供しているサービスではなく、Nemurimachi 本人以外が利用することはありません。
+Nemurimachi 本人以外が利用することはありません。
 </p>
 
 <h2>機能</h2>
@@ -45,26 +72,30 @@
 
 <h2>利用している API</h2>
 <ul>
-  <li>YouTube Data API v3 &mdash; 自身のチャンネルへの動画アップロードと公開日時の設定</li>
-  <li>Instagram Platform API &mdash; 自身のアカウントへの動画投稿</li>
+  <li>
+    <strong>YouTube Data API v3</strong> &mdash; 自身のチャンネルへの動画アップロードと公開日時の設定<br>
+    使用メソッド: <code>videos.insert</code><br>
+    使用スコープ: <code>https://www.googleapis.com/auth/youtube.upload</code>
+  </li>
+  <li>
+    <strong>Instagram Platform API</strong> &mdash; 自身のアカウントへの動画投稿
+  </li>
 </ul>
 <p>
 いずれも Nemurimachi 本人が管理するアカウントに対してのみ使用します。
 第三者のアカウントやデータを扱うことはありません。
+サーバー、データベース、アクセス解析のいずれも保有していません。
 </p>
-
-<h2>プライバシーポリシー</h2>
-<p><a href="privacy.html">プライバシーポリシーはこちら</a></p>
 
 <h2>運営</h2>
 <p>
 Nemurimachi<br>
 <a href="https://nemurimachi.bitfan.id/">https://nemurimachi.bitfan.id/</a><br>
-連絡先: nemurimachi3@gmail.com
+連絡先: <a href="mailto:nemurimachi3@gmail.com">nemurimachi3@gmail.com</a>
 </p>
 
 <footer>
-  &copy; Nemurimachi
+  <a href="privacy.html">プライバシーポリシー</a> ／ <a href="terms.html">利用規約</a>
 </footer>
 
 </body>
