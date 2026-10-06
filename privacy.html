@@ -14,26 +14,53 @@
   @media (prefers-color-scheme: dark) {
     body { color: #e8e8e8; background: #16181c; }
     a { color: #7cb3ff; }
+    .box { background: #1e2127 !important; border-color: #3a3f47 !important; }
   }
   h1 { font-size: 1.6rem; line-height: 1.4; margin: 0 0 .25rem; }
-  h2 { font-size: 1.05rem; margin: 2.5rem 0 .75rem; }
+  h2 { font-size: 1.05rem; margin: 2.5rem 0 .75rem; padding-top: .25rem; }
   .updated { opacity: .6; margin: 0 0 2.5rem; font-size: .9rem; }
   ul { padding-left: 1.3rem; }
   li { margin: .35rem 0; }
   code { font-size: .9em; word-break: break-all; }
+  .box { background: #f6f8fa; border: 1px solid #d8dee4; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
   footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid rgba(128,128,128,.3); opacity: .7; font-size: .9rem; }
 </style>
 </head>
 <body>
 
 <h1>プライバシーポリシー</h1>
-<p class="updated">ショート動画投稿ツール ／ 最終更新日: 2026年10月5日</p>
+<p class="updated">ショート動画投稿ツール（Nemurimachi-shorts） ／ 最終更新日: 2026年10月6日</p>
 
 <h2>このツールについて</h2>
 <p>
 本ツールは、Nemurimachi が自身の公式アカウントへショート動画を投稿する作業を
 自動化するために、Nemurimachi が個人的に利用しているソフトウェアです。
 一般に配布・提供しているサービスではなく、Nemurimachi 本人以外が利用することはありません。
+</p>
+
+<h2>YouTube API Services の利用について</h2>
+<div class="box">
+<p>
+本ツールは <strong>YouTube API Services</strong> を利用しています。
+</p>
+<p>
+本ツールを利用することで、利用者は
+<a href="https://www.youtube.com/t/terms">YouTube 利用規約</a>
+に同意したことになります。
+</p>
+<p>
+Google がどのように情報を取り扱うかについては、
+<a href="https://policies.google.com/privacy">Google プライバシー ポリシー</a>
+をご確認ください。
+</p>
+</div>
+
+<p>本ツールが使用する YouTube Data API の権限は、次の1つのみです。</p>
+<p><code>https://www.googleapis.com/auth/youtube.upload</code></p>
+<p>
+この権限は、Nemurimachi 自身が管理する YouTube チャンネルへ動画をアップロードし、
+公開日時を設定する目的にのみ使用します。他の目的には一切使用しません。
+呼び出す API メソッドは <code>videos.insert</code> のみです。
 </p>
 
 <h2>取得する情報</h2>
@@ -47,22 +74,35 @@
   <li>Nemurimachi 本人のアカウントに対する認証トークン</li>
 </ul>
 
-<h2>Google ユーザーデータの取り扱い</h2>
-<p>本ツールは YouTube Data API v3 を利用し、次の権限を使用します。</p>
-<p><code>https://www.googleapis.com/auth/youtube.upload</code></p>
-<p>
-この権限は、Nemurimachi 自身が管理する YouTube チャンネルへ動画をアップロードし、
-公開日時を設定する目的にのみ使用します。他の目的には一切使用しません。
-</p>
+<h2>保存場所と第三者提供</h2>
 <p>
 取得した認証情報は、Nemurimachi 本人が管理するパソコンのローカル領域にのみ保存されます。
 外部のサーバーへ送信すること、第三者へ提供・販売・共有することはありません。
 広告、分析、機械学習モデルの学習には一切使用しません。
+サーバー、データベース、アクセス解析のいずれも保有していません。
 </p>
 <p>
 本ツールによる Google ユーザーデータの取り扱いは、
 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API サービスのユーザーデータに関するポリシー</a>
 （Limited Use の要件を含む）に準拠します。
+</p>
+
+<h2>データの削除とアクセスの取り消し</h2>
+<p>本ツールが保存するのは認証トークンのみです。以下の方法でいつでも削除・無効化できます。</p>
+<ul>
+  <li>
+    <strong>Google アカウントからアクセス権を取り消す</strong> &mdash;
+    <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>
+    を開き、本ツールを選択してアクセス権を削除します。これにより保存済みのトークンは即座に無効になります。
+  </li>
+  <li>
+    <strong>ローカルの認証情報ファイルを削除する</strong> &mdash;
+    本人のパソコン上にある認証情報ファイルを削除します。
+  </li>
+</ul>
+<p>
+本ツールは Google ユーザーデータを保管するサーバーを持たないため、
+削除の対象となるデータはローカルの認証トークンのみです。
 </p>
 
 <h2>Instagram について</h2>
@@ -71,15 +111,8 @@
 取り扱いの方針は上記と同じで、第三者の情報は扱いません。
 </p>
 
-<h2>データの削除について</h2>
-<p>
-本ツールが保存するのは認証トークンのみです。
-Nemurimachi 本人がローカルの認証情報ファイルを削除すること、および各プラットフォームの
-設定画面からアクセス権を取り消すことで、いつでも削除・無効化できます。
-</p>
-
 <h2>本ポリシーの変更</h2>
-<p>内容を変更する場合は、本ページを更新します。</p>
+<p>内容を変更する場合は、本ページを更新し、冒頭の最終更新日を改めます。</p>
 
 <h2>お問い合わせ</h2>
 <p>
@@ -89,7 +122,7 @@ Nemurimachi 本人がローカルの認証情報ファイルを削除するこ�
 </p>
 
 <footer>
-  <a href="index.html">ショート動画投稿ツール トップへ</a>
+  <a href="index.html">トップ</a> ／ <a href="terms.html">利用規約</a>
 </footer>
 
 </body>
